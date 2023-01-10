@@ -114,7 +114,7 @@ export default function Home() {
                             <div className={styles['description__show']}>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/kitchen.jpg'} alt={''} fill/>
+                                        <Image src={'/img/kitchen-min.jpg'} alt={''} fill/>
                                     </div>
                                 </div>
                                 <ul className={styles['description__items']}>
@@ -148,7 +148,7 @@ export default function Home() {
                                 </ul>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/house_garden.jpg'} alt={''} fill/>
+                                        <Image src={'/img/house_garden-min.jpg'} alt={''} fill/>
                                     </div>
                                 </div>
                             </div>
@@ -160,12 +160,12 @@ export default function Home() {
                     <div className={styles['carousel__container']}>
                         {imageArray.map((image) => (
                             <div className={styles['carousel__item']} key={image}>
-                                <Image src={`/img/${image}.jpg`} alt={image} fill/>
+                                <Image src={`/img/${image}-min.jpg`} alt={image} fill/>
                             </div>
                         ))}
                         {imageArray.map((image) => (
                             <div className={styles['carousel__item']} key={image}>
-                                <Image src={`/img/${image}.jpg`} alt={image} fill/>
+                                <Image src={`/img/${image}-min.jpg`} alt={image} fill/>
                             </div>
                         ))}
                     </div>
@@ -183,7 +183,7 @@ export default function Home() {
                         <div className={styles['gallery__grid']}>
                             {galleryArray.map((image) => (
                                 <div className={styles['gallery__image']} key={image}>
-                                    <Image src={`/img/${image}.jpg`} alt={image} fill />
+                                    <Image src={`/img/${image}-min.jpg`} alt={image} fill />
                                 </div>
                             ))}
                         </div>
