@@ -373,19 +373,22 @@
   }
 
   .main {
-    height: 60vw;
-    margin-bottom: 80px;
+    height: 360px;
+    margin-bottom: 110px;
 
     &__image {
-      height: 60vw;
+      height: 360px;
     }
 
     &__content {
-      width: 90%;
+      width: 100%;
       display: grid;
       grid-template-columns: 50% 50%;
-      margin-bottom: -120px;
+      gap: 8px;
+      margin-bottom: -170px;
       padding: 16px 16px;
+      border-radius: 0;
+      box-shadow: none;
 
       &-item {
         display: flex;
@@ -407,8 +410,13 @@
 
   .description {
 
+    &__container {
+      width: 100%;
+    }
+
     &__content {
       padding: 16px;
+      box-shadow: none;
     }
 
     &__show {
@@ -440,6 +448,9 @@
     &__container {
       flex-direction: column;
       align-items: center;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     &__sections {
@@ -458,7 +469,7 @@
     }
 
     &__image {
-      height: 200px;
+      height: 300px;
       width: 100%;
     }
   }
