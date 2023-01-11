@@ -14,6 +14,7 @@ export default function Home() {
     ]
     const exterior = [
         'house_front',
+        'exterior_1',
         'house_back',
         'garden_2',
         'house_garden',
@@ -23,6 +24,11 @@ export default function Home() {
         'kitchen',
         'kitchen_2',
         'laundry',
+        'laundry_2',
+    ]
+    const diningRoom = [
+        'dining_room_1',
+        'dining_room_2'
     ]
     const livingRoom = [
         'entrance',
@@ -38,11 +44,16 @@ export default function Home() {
         'second_room_bath',
         'third_room_1'
     ]
-    const study = [
+    const tvRoom = [
         'tv_room_1',
+        'tv_room_2',
+    ]
+    const study = [
         'study_1',
+        'study_2',
         'balcony_1',
         'balcony_2',
+        'balcony_3',
     ]
     const [galleryArray, setGalleryArray] = useState(exterior)
     return (
@@ -55,9 +66,12 @@ export default function Home() {
                 <header className={styles['container__header']}>
                     <div className={styles['container__header-content']}>
                         <h1 className={styles['container__header-title']}>
-                            Casa Guaymaral
+                            Casa Campestre Guaymaral
                         </h1>
-                        <button className={styles['cta']}>Más Información</button>
+                        <div className={styles['container__header-items']}>
+                            <h6>es/en</h6>
+                            <button className={styles['cta']}>Más Información</button>
+                        </div>
                     </div>
                 </header>
                 <section className={styles['main']}>
@@ -70,7 +84,13 @@ export default function Home() {
                                     <p>320mts</p>
                                 </div>
                             </div>
-
+                            <div className={styles['main__content-item']}>
+                                <i className={`material-symbols-outlined ${styles['main__content-icon']}`}>dashboard</i>
+                                <div className={styles['main__content-description']}>
+                                    <h4>Área Total</h4>
+                                    <p>1420mts</p>
+                                </div>
+                            </div>
                             <div className={styles['main__content-item']}>
                                 <i className={`material-symbols-outlined ${styles['main__content-icon']}`}>king_bed</i>
                                 <div className={styles['main__content-description']}>
@@ -103,18 +123,19 @@ export default function Home() {
                     </div>
                 </section>
                 <section className={styles['description']}>
+                    <Image src={'/img/map.jpg'} alt={''} fill/>
                     <div className={styles['description__shadow-top']}/>
                     <div className={styles['description__container']}>
                         <div className={styles['description__content']}>
-                            <p>Hermosa casa en hacienda <strong>San Sebastián</strong> a 5 minutos del centro comercial
-                                Bima.
-                                <br/>
-                                Casa de dos pisos con <strong>320mts</strong> en un lote de <strong>1420
-                                    mts.</strong></p>
+                            <p>
+                                Hermosa casa campestre en hacienda <strong>San Sebastián</strong> a minutos del centro comercial Bima en
+                                Bogotá, Colombia. <br/>Casa de diseño moderno con <strong>320mts</strong> construidos en un lote de <strong>1420mts </strong>
+                                que proporciona privacidad y majestuosas vistas de la vegetación de la sabana.
+                            </p>
                             <div className={styles['description__show']}>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/kitchen-min.jpg'} alt={''} fill/>
+                                        <Image src={'/img/kitchen.jpg'} alt={''} fill/>
                                     </div>
                                 </div>
                                 <ul className={styles['description__items']}>
@@ -127,7 +148,7 @@ export default function Home() {
                                     <li><i className={'material-symbols-outlined'}>weekend</i>Sala con doble altura</li>
                                     <li><i className={'material-symbols-outlined'}>table_restaurant</i>Comedor</li>
                                     <li>
-                                        <button className={styles['cta']}>Lo quiero!</button>
+                                        <button className={styles['cta']}>¡Lo quiero!</button>
                                     </li>
                                 </ul>
                             </div>
@@ -148,7 +169,7 @@ export default function Home() {
                                 </ul>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/house_garden-min.jpg'} alt={''} fill/>
+                                        <Image src={'/img/house_garden.jpg'} alt={''} fill/>
                                     </div>
                                 </div>
                             </div>
@@ -174,11 +195,13 @@ export default function Home() {
                 <section className={styles['gallery']}>
                     <div className={styles['gallery__container']}>
                         <ul className={styles['gallery__sections']}>
-                            <li onClick={() => setGalleryArray(exterior)}>Exterior</li>
-                            <li onClick={() => setGalleryArray(kitchen)}>Cocina / Lavandería</li>
-                            <li onClick={() => setGalleryArray(livingRoom)}>Sala / Comedor</li>
+                            <li onClick={() => setGalleryArray(kitchen)}>Cocina y Lavandería</li>
+                            <li onClick={() => setGalleryArray(diningRoom)}>Comedor</li>
+                            <li onClick={() => setGalleryArray(livingRoom)}>Sala</li>
+                            <li onClick={() => setGalleryArray(study)}>Estudio y Terraza</li>
+                            <li onClick={() => setGalleryArray(tvRoom)}>Sala TV</li>
                             <li onClick={() => setGalleryArray(rooms)}>Habitaciones</li>
-                            <li onClick={() => setGalleryArray(study)}>Estudio / Sala Tv</li>
+                            <li onClick={() => setGalleryArray(exterior)}>Exterior</li>
                         </ul>
                         <div className={styles['gallery__grid']}>
                             {galleryArray.map((image) => (

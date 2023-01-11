@@ -27,6 +27,22 @@
       margin: 0;
       text-transform: uppercase;
     }
+
+    &-items {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      & > h6 {
+        font-size: 16px;
+        cursor: pointer;
+        transition: all ease 1s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
@@ -121,9 +137,6 @@
 }
 
 .description {
-  background-image: url('/img/map.jpg');
-  background-size: cover;
-  background-position: center;
   width: 100%;
   margin: 80px 0;
   z-index: 0;
@@ -132,6 +145,10 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  & > img {
+    object-fit: cover;
+  }
 
   &__container {
     width: 90%;
@@ -224,6 +241,7 @@
   &__container {
     display: inline-flex;
     animation: scroll 30s linear infinite;
+    gap: 16px;
   }
 
   &__item {
@@ -263,6 +281,7 @@
     box-shadow: 0 1px 10px rgba(0,0,0,0.16);
     background-color: white;
     padding: 40px 0;
+    transition: all ease 1s;
   }
 
   &__sections {
@@ -303,10 +322,18 @@
 }
 
 @media (max-width: 1024px) {
+  .container {
+    &__header {
+      &-title {
+        font-size: 32px;
+      }
+    }
+  }
   .main {
     &__content {
       width: 90%;
       margin-bottom: -20px;
+
 
       &-icon {
         font-size: 32px;
@@ -358,12 +385,27 @@
   .container {
     &__header {
       padding: 16px 0;
+      height: 120px;
+
       &-content {
-        gap: 24px;
+        flex-direction: column;
+        gap: 8px;
       }
 
       &-title {
         font-size: 30px;
+        text-align: center;
+        margin-top: 16px;
+      }
+
+      &-items {
+        flex-direction: column;
+        width: 100%;
+        gap: 300px;
+
+        & > h6 {
+          margin: 0;
+        }
       }
     }
   }
