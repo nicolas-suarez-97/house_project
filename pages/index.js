@@ -18,13 +18,13 @@ export default function Home() {
         'house_back',
         'garden_2',
         'house_garden',
-        'house_front_2',
+        'house_front_2'
     ]
     const kitchen = [
         'kitchen',
         'kitchen_2',
         'laundry',
-        'laundry_2',
+        'laundry_2'
     ]
     const diningRoom = [
         'dining_room_1',
@@ -34,7 +34,7 @@ export default function Home() {
         'entrance',
         'living_room',
         'living_room_1',
-        'living_room_3',
+        'living_room_3'
     ]
     const rooms = [
         'main_room_1',
@@ -46,14 +46,14 @@ export default function Home() {
     ]
     const tvRoom = [
         'tv_room_1',
-        'tv_room_2',
+        'tv_room_2'
     ]
     const study = [
         'study_1',
         'study_2',
         'balcony_1',
         'balcony_2',
-        'balcony_3',
+        'balcony_3'
     ]
     const [galleryArray, setGalleryArray] = useState(exterior)
     return (
@@ -128,8 +128,10 @@ export default function Home() {
                     <div className={styles['description__container']}>
                         <div className={styles['description__content']}>
                             <p>
-                                Hermosa casa campestre en hacienda <strong>San Sebastián</strong> a minutos del centro comercial Bima en
-                                Bogotá, Colombia. <br/>Casa de diseño moderno con <strong>320mts</strong> construidos en un lote de <strong>1420mts </strong>
+                                Hermosa casa campestre en hacienda <strong>San Sebastián</strong> a minutos del centro
+                                comercial Bima en
+                                Bogotá, Colombia. <br/>Casa de diseño moderno con <strong>320mts</strong> construidos en
+                                un lote de <strong>1420mts </strong>
                                 que proporciona privacidad y majestuosas vistas de la vegetación de la sabana.
                             </p>
                             <div className={styles['description__show']}>
@@ -139,7 +141,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <ul className={styles['description__items']}>
-                                    <li><i className={'material-symbols-outlined'}>bed</i>4 Habitaciones, cada una con
+                                    <li><i className={'material-symbols-outlined'}>bed</i>4 Habitaciones, con
                                         baño privado
                                     </li>
                                     <li><i className={'material-symbols-outlined'}>shower</i>Baño social</li>
@@ -154,13 +156,14 @@ export default function Home() {
                             </div>
                             <div className={styles['description__show']}>
                                 <ul className={styles['description__items']}>
-                                    <li><i className={'material-symbols-outlined'}>menu_book</i>Estudio en segunda
-                                        planta
+                                    <li><i className={'material-symbols-outlined'}>menu_book</i>Estudio y terraza en
+                                        segunda planta
                                     </li>
                                     <li><i className={'material-symbols-outlined'}>outdoor_grill</i>Zona de asados</li>
                                     <li><i className={'material-symbols-outlined'}>balcony</i>Terraza</li>
                                     <li><i className={'material-symbols-outlined'}>garage</i>4 garajes</li>
                                     <li><i className={'material-symbols-outlined'}>forest</i>Rodeado de bellos jardines
+                                        privados / Jardín privado alrededor de la casa
                                     </li>
                                     <li><i className={'material-symbols-outlined'}>shield</i>Conjunto privado</li>
                                     <li>
@@ -206,7 +209,7 @@ export default function Home() {
                         <div className={styles['gallery__grid']}>
                             {galleryArray.map((image) => (
                                 <div className={styles['gallery__image']} key={image}>
-                                    <Image src={`/img/${image}-min.jpg`} alt={image} fill />
+                                    <Image src={`/img/${image}-min.jpg`} alt={image} fill/>
                                 </div>
                             ))}
                         </div>
