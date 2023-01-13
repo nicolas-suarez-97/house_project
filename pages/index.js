@@ -2,8 +2,12 @@ import styles from './index.module.scss'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 
 export default function Home() {
+    const Map = dynamic(() => import('../components/map/map'), {
+        ssr: false
+    })
     const imageArray = [
         'house_back',
         'living_room',
@@ -215,6 +219,13 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+                <h1>Ubicación</h1>
+                <section className={styles['map']}>
+                    <Map />
+                </section>
+                <footer className={styles['footer']}>
+
+                </footer>
             </main>
         </>
     )

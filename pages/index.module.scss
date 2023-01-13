@@ -321,6 +321,20 @@
   }
 }
 
+.map {
+  width: 90%;
+  max-width: 1280px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.16);
+}
+
+.footer {
+  height: 400px;
+}
+
 @media (max-width: 1024px) {
   .container {
     &__header {
@@ -483,7 +497,6 @@
     }
   }
 
-
   .gallery {
     margin: 8px 0;
 
@@ -514,5 +527,12 @@
       height: 300px;
       width: 100%;
     }
+  }
+
+  .map {
+    width: 100%;
+    border-radius: 0;
+    height: 400px;
+    box-shadow: none;
   }
 }
