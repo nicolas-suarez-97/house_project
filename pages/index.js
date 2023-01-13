@@ -1,9 +1,14 @@
-import styles from "./index.module.scss";
-import Image from "next/image";
-import Head from "next/head";
-import { useState } from "react";
+import styles from './index.module.scss'
+import Image from 'next/image'
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+import ImageViewer from '../components/imageViewer/imageViewer'
 
 export default function Home() {
+    const Map = dynamic(() => import('../components/map/map'), {
+        ssr: false
+    })
   const imageArray = [
     "house_back",
     "living_room",
@@ -76,10 +81,18 @@ export default function Home() {
   const study_list = [
     { text: "Muebles en madera", icon: "event_seat" },
     { text: "Techo taslucido en terraza", icon: "brightness_7" },
+    const thumbSize = 640
   ];
 
   const [galleryArray, setGalleryArray] = useState(exterior);
   const [listArray, setListArray] = useState(exterior_list);
+
+    const [isOpen, setIsOpen] = useState(false)
+    const [image, setImage] = useState('')
+
+    useEffect(() => {
+        document.body.style.overflowY = isOpen ? 'hidden' : 'scroll'
+    }, [isOpen])
 
   return (
     <>
@@ -261,12 +274,12 @@ export default function Home() {
           <div className={styles["carousel__container"]}>
             {imageArray.map((image) => (
               <div className={styles["carousel__item"]} key={image}>
-                <Image src={`/img/${image}-min.jpg`} alt={image} fill />
+                <Image src={`/img/${thumbSize}/${image}-${thumbSize}.webp`} alt={image} fill />
               </div>
             ))}
             {imageArray.map((image) => (
               <div className={styles["carousel__item"]} key={image}>
-                <Image src={`/img/${image}-min.jpg`} alt={image} fill />
+                <Image src={`/img/${thumbSize}/${image}-${thumbSize}.webp`} alt={image} fill />
               </div>
             ))}
           </div>
@@ -348,14 +361,31 @@ export default function Home() {
             </div>
             <div className={styles["gallery__grid"]}>
               {galleryArray.map((image) => (
-                <div className={styles["gallery__image"]} key={image}>
-                  <Image src={`/img/${image}-min.jpg`} alt={image} fill />
+                <div
+                                    className={styles["gallery__image"]}
+                                    key={image}
+                                    onClick={() => {
+                                        setImage(image)
+                                        setIsOpen(true)
+                                    }}
+                                >
+                  <Image src={`/img/${thumbSize}/${image}-${thumbSize}.webp`} alt={image} fill />
                 </div>
               ))}
             </div>
           </div>
         </section>
+                <h1>Ubicación</h1>
+                <section className={styles['map']}>
+                    <Map/>
+                </section>
+                <footer className={styles['footer']} />
       </main>
+            <ImageViewer
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                image={image}
+            />
     </>
   );
 }
