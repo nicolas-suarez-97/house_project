@@ -9,3 +9,8 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 440px) {
+  body {
+    background-color: white;
+  }
+}
