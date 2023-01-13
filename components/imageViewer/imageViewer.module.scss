@@ -1,0 +1,56 @@
+.image-viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  &__shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.71);
+  }
+
+  & > i {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  &__container {
+    height: 40vw;
+    max-height: 900px;
+    width: 80%;
+    max-width: 1600px;
+    position: relative;
+
+    & > img {
+      object-fit: contain;
+      z-index: 1;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .image-viewer {
+    &__container {
+      height: 300px;
+      width: 100%;
+      position: relative;
+
+      & > img {
+        object-fit: cover;
+      }
+    }
+  }
+}
