@@ -81,8 +81,8 @@ export default function Home() {
   const study_list = [
     { text: "Muebles en madera", icon: "event_seat" },
     { text: "Techo taslucido en terraza", icon: "brightness_7" },
-    const thumbSize = 640
   ];
+  const thumbSize = 640
 
   const [galleryArray, setGalleryArray] = useState(exterior);
   const [listArray, setListArray] = useState(exterior_list);
@@ -349,7 +349,7 @@ export default function Home() {
               <div className={styles["gallery__separator"]}></div>
               <ul className={styles["gallery__items"]}>
                 {listArray.map((item) => (
-                  <li>
+                  <li key={item}>
                     <i className={"material-symbols-outlined"} key={item}>
                       {" "}
                       {item.icon}
