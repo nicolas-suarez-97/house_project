@@ -291,6 +291,10 @@ export default function Home() {
                         ))}
                     </div>
                 </section>
+                <h1>Ubicación</h1>
+                <section className={styles['map']}>
+                    <Map/>
+                </section>
                 <h1>Galería</h1>
                 <section className={styles['gallery']}>
                     <div className={styles['gallery__container']}>
@@ -381,10 +385,6 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
-                </section>
-                <h1>Ubicación</h1>
-                <section className={styles['map']}>
-                    <Map/>
                 </section>
                 <footer className={styles['footer']}/>
             </main>
