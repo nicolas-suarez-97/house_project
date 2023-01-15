@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from './imageViewer.module.scss';
+import styles from './imageViewer.module.scss'
 import Image from 'next/image'
 
 const ImageViewer = ({isOpen, setIsOpen, image}) => {
@@ -8,12 +8,18 @@ const ImageViewer = ({isOpen, setIsOpen, image}) => {
     return (
         isOpen && <div className={styles['image-viewer']}>
             <div className={styles['image-viewer__container']}>
-                <Image src={`/img/${size}/${image}-${size}.webp`} alt={'Image'} fill />
+                <Image
+                    src={`/img/${size}/${image}-${size}.webp`}
+                    alt={'Image'}
+                    fill
+                    placeholder={'blur'}
+                    blurDataURL={'/img/loading.gif'}
+                />
             </div>
             <i className={'material-symbols-outlined'} onClick={() => setIsOpen(false)}>close</i>
             <div className={styles['image-viewer__shadow']} onClick={() => setIsOpen(false)}/>
         </div>
-    );
+    )
 }
 
 export default ImageViewer

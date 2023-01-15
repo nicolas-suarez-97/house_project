@@ -269,12 +269,24 @@ export default function Home() {
                     <div className={styles['carousel__container']}>
                         {imageArray.map((image) => (
                             <div className={styles['carousel__item']} key={image}>
-                                <Image src={`/img/${thumbSize}/${image}-${thumbSize}.webp`} alt={image} fill/>
+                                <Image
+                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
+                                    alt={image}
+                                    fill
+                                    placeholder={'blur'}
+                                    blurDataURL={'/img/loading.gif'}
+                                />
                             </div>
                         ))}
                         {imageArray.map((image) => (
                             <div className={styles['carousel__item']} key={image}>
-                                <Image src={`/img/${thumbSize}/${image}-${thumbSize}.webp`} alt={image} fill/>
+                                <Image
+                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
+                                    alt={image}
+                                    fill
+                                    placeholder={'blur'}
+                                    blurDataURL={'/img/loading.gif'}
+                                />
                             </div>
                         ))}
                     </div>
