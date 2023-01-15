@@ -339,9 +339,9 @@
     }
   }
   &__separator{
-      border-bottom: 2px solid black;
-      width: 80%;
-      margin: 26px 26px;
+      border-bottom: 1px solid black;
+      width: 70%;
+      margin: 24px auto;
   }
 }
 
@@ -530,14 +530,20 @@
       width: 100%;
       border-radius: 0;
       box-shadow: none;
+
+      &-left {
+        gap: 0;
+        width: 100%;
+      }
     }
 
     &__sections {
-      width: 100%;
+      width: 90%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       padding: 0;
+      margin: auto;
    }
 
     &__grid {
