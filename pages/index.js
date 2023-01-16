@@ -10,7 +10,7 @@ export default function Home() {
         ssr: false
     })
     const imageArray = [
-        'house_back',
+        'exterior_2',
         'living_room',
         'balcony_1',
         'kitchen_2',
@@ -20,10 +20,8 @@ export default function Home() {
     const exterior = [
         'house_front',
         'exterior_1',
-        'house_back',
-        'garden_2',
-        'house_garden',
-        'house_front_2'
+        'exterior_2',
+        'exterior_3',
     ]
     const exterior_list = [
         {text: 'Jardín Zen', icon: 'self_improvement'},
@@ -257,7 +255,7 @@ export default function Home() {
                                 </ul>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/house_garden.jpg'} alt={''} fill/>
+                                        <Image src={'/img/1600/exterior_3-1600.webp'} alt={''} fill/>
                                     </div>
                                 </div>
                             </div>
@@ -273,8 +271,7 @@ export default function Home() {
                                     src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
                                     alt={image}
                                     fill
-                                    placeholder={'blur'}
-                                    blurDataURL={'/img/loading.gif'}
+                                    priority={true}
                                 />
                             </div>
                         ))}
@@ -284,8 +281,7 @@ export default function Home() {
                                     src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
                                     alt={image}
                                     fill
-                                    placeholder={'blur'}
-                                    blurDataURL={'/img/loading.gif'}
+                                    priority={true}
                                 />
                             </div>
                         ))}
