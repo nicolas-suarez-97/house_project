@@ -35,7 +35,7 @@
     position: relative;
 
     & > img {
-      object-fit: contain;
+      object-fit: cover;
       z-index: 1;
     }
   }

@@ -13,7 +13,7 @@ const ImageViewer = ({isOpen, setIsOpen, image}) => {
                     alt={'Image'}
                     fill
                     placeholder={'blur'}
-                    blurDataURL={'/img/loading.gif'}
+                    blurDataURL={`/img/640/${image}-640.webp`}
                 />
             </div>
             <i className={'material-symbols-outlined'} onClick={() => setIsOpen(false)}>close</i>
