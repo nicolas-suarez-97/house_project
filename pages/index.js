@@ -9,6 +9,9 @@ export default function Home() {
     const Map = dynamic(() => import('../components/map/map'), {
         ssr: false
     })
+    const VrViewer = dynamic(() => import('../components/vrViewer/vrViewer'), {
+        ssr: false
+    })
     const imageArray = [
         'exterior_2',
         'living_room',
@@ -381,6 +384,9 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
+                </section>
+                <section>
+                    <VrViewer />
                 </section>
                 <footer className={styles['footer']}/>
             </main>
