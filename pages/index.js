@@ -9,6 +9,7 @@ export default function Home() {
     const Map = dynamic(() => import('../components/map/map'), {
         ssr: false
     })
+    const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
     const imageArray = [
         'exterior_2',
         'living_room',
@@ -108,7 +109,7 @@ export default function Home() {
                         </h1>
                         <div className={styles['container__header-items']}>
                             <h6>es/en</h6>
-                            <button className={styles['cta']}>Más Información</button>
+                            <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>Más Información</a>
                         </div>
                     </div>
                 </header>
@@ -223,7 +224,7 @@ export default function Home() {
                                         Comedor
                                     </li>
                                     <li>
-                                        <button className={styles['cta']}>¡Lo quiero!</button>
+                                        <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>¡Lo quiero!</a>
                                     </li>
                                 </ul>
                             </div>
@@ -250,7 +251,7 @@ export default function Home() {
                                         Conjunto privado
                                     </li>
                                     <li>
-                                        <button className={styles['cta']}>Agendar visita</button>
+                                        <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>Agendar visita</a>
                                     </li>
                                 </ul>
                                 <div className={styles['description__image']}>
