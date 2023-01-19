@@ -10,7 +10,7 @@ export default function Home() {
         ssr: false
     })
     const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
-    const tour360 = 'https://vr-viewer-pearl.vercel.app'
+    const tour360 = 'https://house-vr-viewer.vercel.app'
     const imageArray = [
         'exterior_2',
         'living_room',
