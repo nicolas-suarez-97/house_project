@@ -10,6 +10,7 @@ export default function Home() {
         ssr: false
     })
     const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
+    const tour360 = 'https://vr-viewer-pearl.vercel.app'
     const imageArray = [
         'exterior_2',
         'living_room',
@@ -250,8 +251,9 @@ export default function Home() {
                                         <i className={'material-symbols-outlined'}>shield</i>
                                         Conjunto privado
                                     </li>
-                                    <li>
+                                    <li className={styles['cta__container']}>
                                         <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>Agendar visita</a>
+                                        <a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>
                                     </li>
                                 </ul>
                                 <div className={styles['description__image']}>
@@ -365,6 +367,9 @@ export default function Home() {
                                         {item.text}
                                     </li>
                                 ))}
+                                <li>
+                                    <a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>
+                                </li>
                             </ul>
                         </div>
                         <div className={styles['gallery__grid']}>
