@@ -9,6 +9,8 @@ export default function Home() {
     const Map = dynamic(() => import('../components/map/map'), {
         ssr: false
     })
+    const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
+    const tour360 = 'https://vr-viewer-pearl.vercel.app'
     const VrViewer = dynamic(() => import('../components/vrViewer/vrViewer'), {
         ssr: false
     })
@@ -24,7 +26,7 @@ export default function Home() {
         'house_front',
         'exterior_1',
         'exterior_2',
-        'exterior_3',
+        'exterior_3'
     ]
     const exterior_list = [
         {text: 'Jardín Zen', icon: 'self_improvement'},
@@ -111,7 +113,8 @@ export default function Home() {
                         </h1>
                         <div className={styles['container__header-items']}>
                             <h6>es/en</h6>
-                            <button className={styles['cta']}>Más Información</button>
+                            <a href={whatsAppLink} className={styles['cta']} target="_blank" rel="noreferrer">Más
+                                Información</a>
                         </div>
                     </div>
                 </header>
@@ -226,7 +229,8 @@ export default function Home() {
                                         Comedor
                                     </li>
                                     <li>
-                                        <button className={styles['cta']}>¡Lo quiero!</button>
+                                        <a href={whatsAppLink} className={styles['cta']} target="_blank"
+                                           rel="noreferrer">¡Lo quiero!</a>
                                     </li>
                                 </ul>
                             </div>
@@ -253,7 +257,8 @@ export default function Home() {
                                         Conjunto privado
                                     </li>
                                     <li>
-                                        <button className={styles['cta']}>Agendar visita</button>
+                                        <a href={whatsAppLink} className={styles['cta']} target="_blank"
+                                           rel="noreferrer">Agendar visita</a>
                                     </li>
                                 </ul>
                                 <div className={styles['description__image']}>
@@ -265,30 +270,6 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={styles['description__shadow-bottom']}/>
-                </section>
-                <section className={styles['carousel']}>
-                    <div className={styles['carousel__container']}>
-                        {imageArray.map((image) => (
-                            <div className={styles['carousel__item']} key={image}>
-                                <Image
-                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
-                                    alt={image}
-                                    fill
-                                    priority={true}
-                                />
-                            </div>
-                        ))}
-                        {imageArray.map((image) => (
-                            <div className={styles['carousel__item']} key={image}>
-                                <Image
-                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
-                                    alt={image}
-                                    fill
-                                    priority={true}
-                                />
-                            </div>
-                        ))}
-                    </div>
                 </section>
                 <h1>Ubicación</h1>
                 <section className={styles['map']}>
@@ -385,10 +366,34 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section>
-                    <VrViewer />
+                <section className={styles['vr-viewer']}>
+                    <h1>Tour 360</h1>
+                    <VrViewer/>
                 </section>
-                <footer className={styles['footer']}/>
+                <section className={styles['carousel']}>
+                    <div className={styles['carousel__container']}>
+                        {imageArray.map((image) => (
+                            <div className={styles['carousel__item']} key={image}>
+                                <Image
+                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
+                                    alt={image}
+                                    fill
+                                    priority={true}
+                                />
+                            </div>
+                        ))}
+                        {imageArray.map((image) => (
+                            <div className={styles['carousel__item']} key={image}>
+                                <Image
+                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
+                                    alt={image}
+                                    fill
+                                    priority={true}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </main>
             <ImageViewer
                 isOpen={isOpen}

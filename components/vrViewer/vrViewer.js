@@ -1,17 +1,10 @@
 import React from 'react'
-import styles from './vrViewer.module.scss'
-import * as PANOLENS from "panolens";
-
-const panorama = new PANOLENS.ImagePanorama("/img/vr360/test2.jpg");
-const viewer = new PANOLENS.Viewer({
-    container: document.querySelector("#coucou")
-});
-viewer.add(panorama);
+import styles from './vrViewer.module.scss';
 
 const VrViewer = () => {
     return (
         <div className={styles['vr-viewer']}>
-            <div id="coucou" />
+            <iframe height={'100%'} width={'100%'} src="https://vr-viewer-pearl.vercel.app"/>
         </div>
     )
 }
