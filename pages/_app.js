@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import Script from 'next/script'
 import Head from 'next/head'
 import * as fbq from '../lib/fbpixel'
+import * as ga from '../lib/ga';
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
@@ -12,8 +13,8 @@ function MyApp({Component, pageProps}) {
         fbq.pageview()
 
         const handleRouteChange = (url) => {
+            ga.pageview(url)
             fbq.pageview()
-            // ga.pageview(url)
         }
 
         router.events.on('routeChangeComplete', handleRouteChange)

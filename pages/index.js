@@ -253,7 +253,7 @@ export default function Home() {
                                     </li>
                                     <li className={styles['cta__container']}>
                                         <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>Agendar visita</a>
-                                        <a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>
+                                        {/*<a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>*/}
                                     </li>
                                 </ul>
                                 <div className={styles['description__image']}>
@@ -368,7 +368,7 @@ export default function Home() {
                                     </li>
                                 ))}
                                 <li>
-                                    <a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>
+                                    {/*<a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>*/}
                                 </li>
                             </ul>
                         </div>
