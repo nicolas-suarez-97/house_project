@@ -2,7 +2,6 @@ import '../styles/globals.css'
 import Script from 'next/script'
 import Head from 'next/head'
 import * as fbq from '../lib/fbpixel'
-import * as ga from '../lib/ga';
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
@@ -13,7 +12,6 @@ function MyApp({Component, pageProps}) {
         fbq.pageview()
 
         const handleRouteChange = (url) => {
-            ga.pageview(url)
             fbq.pageview()
         }
 
@@ -38,6 +36,21 @@ function MyApp({Component, pageProps}) {
                     s.parentNode.insertBefore(t,s)}(window, document,'script',
                     'https://connect.facebook.net/en_US/fbevents.js');
                     fbq('init', ${fbq.FB_PIXEL_ID});
+                `
+            }}
+        />
+        <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+        <Script
+            strategy="lazyOnload"
+            id={'ga'}
+            dangerouslySetInnerHTML={{
+                __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                    page_path: window.location.pathname,
+                    });
                 `
             }}
         />
