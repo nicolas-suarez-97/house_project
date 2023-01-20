@@ -2,13 +2,9 @@ import styles from './index.module.scss'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import ImageViewer from '../components/imageViewer/imageViewer'
 
 export default function Home() {
-    const Map = dynamic(() => import('../components/map/map'), {
-        ssr: false
-    })
     const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
     const tour360 = 'https://house-vr-viewer.vercel.app'
     const imageArray = [
@@ -291,9 +287,12 @@ export default function Home() {
                     </div>
                 </section>
                 <h1>Ubicación</h1>
-                <section className={styles['map']}>
-                    <Map/>
-                </section>
+                <div className={styles['map']}>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.447288101044!2d-74.05531129789163!3d4.812927960158368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f86471aa8bc13%3A0x8af900a059e009f1!2sHacienda%20San%20Sebasti%C3%A1n!5e0!3m2!1ses!2sco!4v1674183171752!5m2!1ses!2sco"
+                        width="100%" height="100%" allowFullScreen="" loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <h1>Galería</h1>
                 <section className={styles['gallery']}>
                     <div className={styles['gallery__container']}>
