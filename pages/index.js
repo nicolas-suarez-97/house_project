@@ -85,6 +85,7 @@ export default function Home() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [image, setImage] = useState('')
+    const [index, setIndex] = useState(0)
 
     useEffect(() => {
         document.body.style.overflowY = isOpen ? 'hidden' : 'scroll'
@@ -372,12 +373,12 @@ export default function Home() {
                             </ul>
                         </div>
                         <div className={styles['gallery__grid']}>
-                            {galleryArray.map((image) => (
+                            {galleryArray.map((image, index) => (
                                 <div
                                     className={styles['gallery__image']}
                                     key={image}
                                     onClick={() => {
-                                        setImage(image)
+                                        setIndex(index)
                                         setIsOpen(true)
                                     }}
                                 >
@@ -392,7 +393,8 @@ export default function Home() {
             <ImageViewer
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
-                image={image}
+                images={galleryArray}
+                index={index}
             />
         </>
     )
