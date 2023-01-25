@@ -3,9 +3,13 @@ import Image from 'next/image'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import ImageViewer from '../components/imageViewer/imageViewer'
+import * as fbq from '../lib/fbpixel'
 
 export default function Home() {
     const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
+    const handleContact = () => {
+        fbq.event('contacto')
+    }
     const tour360 = 'https://house-vr-viewer.vercel.app'
     const imageArray = [
         'exterior_2',
@@ -107,7 +111,7 @@ export default function Home() {
                         </h1>
                         <div className={styles['container__header-items']}>
                             <h6>es/en</h6>
-                            <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>Más Información</a>
+                            <a href={whatsAppLink} onClick={handleContact} className={styles['cta']} target='_blank' rel='noreferrer'>Más Información</a>
                         </div>
                     </div>
                 </header>
@@ -222,7 +226,7 @@ export default function Home() {
                                         Comedor
                                     </li>
                                     <li>
-                                        <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>¡Lo quiero!</a>
+                                        <a href={whatsAppLink} onClick={handleContact} className={styles['cta']} target='_blank' rel='noreferrer'>¡Lo quiero!</a>
                                     </li>
                                 </ul>
                             </div>
@@ -249,7 +253,7 @@ export default function Home() {
                                         Conjunto privado
                                     </li>
                                     <li className={styles['cta__container']}>
-                                        <a href={whatsAppLink} className={styles['cta']} target='_blank' rel='noreferrer'>Agendar visita</a>
+                                        <a href={whatsAppLink} onClick={handleContact} className={styles['cta']} target='_blank' rel='noreferrer'>Agendar visita</a>
                                         {/*<a href={tour360} className={styles['cta__secondary']} target='_blank' rel='noreferrer'>Tour 360</a>*/}
                                     </li>
                                 </ul>
