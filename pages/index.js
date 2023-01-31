@@ -8,7 +8,7 @@ import * as fbq from '../lib/fbpixel'
 export default function Home() {
     const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
     const handleContact = () => {
-        fbq.event('contacto')
+        fbq.event('Contact')
     }
     const tour360 = 'https://house-vr-viewer.vercel.app'
     const imageArray = [
