@@ -261,14 +261,15 @@
   &__container {
     display: inline-flex;
     animation: scroll 30s linear infinite;
-    gap: 16px;
+    gap: 8px;
   }
 
   &__item {
     position: relative;
     height: 288px;
-    width: 488px;
+    width: 380px;
     overflow: hidden;
+    border-radius: 10px;
 
     & > img {
       object-fit: cover;

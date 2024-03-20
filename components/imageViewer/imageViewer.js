@@ -53,7 +53,7 @@ const ImageViewer = ({isOpen, setIsOpen, images, index}) => {
                     {images.map((image, index) => (
                         <div key={`viewer-image-${index}`} className={styles['image-viewer__item']}>
                             <Image
-                                src={`/img/${size}/${image}-${size}.webp`}
+                                src={`/img/${size}/${image}_${size}.jpg`}
                                 alt={'Image'}
                                 fill
                             />

@@ -12,18 +12,16 @@ export default function Home() {
     }
     const tour360 = 'https://house-vr-viewer.vercel.app'
     const imageArray = [
-        'exterior_2',
-        'living_room',
-        'balcony_1',
-        'kitchen_2',
-        'main_room_1',
-        'study_1'
+        'casa_arrayanes_comedor',
+        'casa_arrayanes_frente_2',
+        'casa_arrayanes_habitacion_3',
+        'casa_arrayanes_cocina',
+        'casa_arrayanes_jardin',
+        'casa_arrayanes_terraza',
     ]
     const exterior = [
-        'house_front',
-        'exterior_1',
-        'exterior_2',
-        'exterior_3',
+        'casa_arrayanes_frente_2',
+        'casa_arrayanes_frente',
     ]
     const exterior_list = [
         {text: 'Jardín Zen', icon: 'self_improvement'},
@@ -31,7 +29,7 @@ export default function Home() {
         {text: '4 accesos al interior de la casa', icon: 'door_sliding'},
         {text: 'Valla de arboles alrededor', icon: 'forest'}
     ]
-    const kitchen = ['kitchen', 'kitchen_2', 'laundry', 'laundry_2']
+    const kitchen = ['casa_arrayanes_cocina', 'casa_arrayanes_cocina_2', 'casa_arrayanes_lavanderia']
     const kitchen_list = [
         {text: 'Horno', icon: 'cake'},
         {text: 'Lavaplatos automatico', icon: 'shower'},
@@ -41,16 +39,14 @@ export default function Home() {
         {text: 'Acceso al patio', icon: 'door_sliding'}
     ]
 
-    const diningRoom = ['dining_room_1', 'dining_room_2']
+    const diningRoom = ['casa_arrayanes_comedor', 'casa_arrayanes_comedor_2']
     const diningRoom_list = [
         {text: 'Acceso a jardines por puerta corrediza', icon: 'door_sliding'},
         {text: 'Mesón de madera', icon: 'event_seat'}
     ]
     const livingRoom = [
-        'entrance',
-        'living_room',
-        'living_room_1',
-        'living_room_3'
+        'casa_arrayanes_sala',
+        'casa_arrayanes_sala_2',
     ]
     const livingRoom_list = [
         {text: 'Sala de doble altura', icon: 'grid_view'},
@@ -59,12 +55,9 @@ export default function Home() {
         {text: 'Acceso a jardines por puerta corrediza', icon: 'door_sliding'}
     ]
     const rooms = [
-        'main_room_1',
-        'main_room_closet_1',
-        'main_room_bath',
-        'secondary_room_1',
-        'second_room_bath',
-        'third_room_1'
+        'casa_arrayanes_habitacion_3',
+        'casa_arrayanes_habitacion_1',
+        'casa_arrayanes_habitcion_2',
     ]
     const rooms_list = [
         {text: 'Walking closet en madera', icon: 'door_sliding'},
@@ -77,7 +70,7 @@ export default function Home() {
         {text: 'Techo corredizo', icon: 'door_sliding'},
         {text: 'Acceso a la zona de BBQ', icon: 'outdoor_grill'}
     ]
-    const study = ['study_1', 'study_2', 'balcony_1', 'balcony_2', 'balcony_3']
+    const study = ['casa_arrayanes_piso_3', 'casa_arrayanes_estudio', 'casa_arrayanes_terraza']
     const study_list = [
         {text: 'Muebles en madera', icon: 'event_seat'},
         {text: 'Techo taslucido en terraza', icon: 'brightness_7'}
@@ -107,10 +100,10 @@ export default function Home() {
                 <header className={styles['container__header']}>
                     <div className={styles['container__header-content']}>
                         <h1 className={styles['container__header-title']}>
-                            Casa Campestre Guaymaral
+                            Casa Campestre Arrayanes
                         </h1>
                         <div className={styles['container__header-items']}>
-                            <h6>es/en</h6>
+                            <h6></h6>
                             <a href={whatsAppLink} onClick={handleContact} className={styles['cta']} target='_blank' rel='noreferrer'>Más Información</a>
                         </div>
                     </div>
@@ -179,7 +172,7 @@ export default function Home() {
                     </div>
 
                     <div className={styles['main__image']}>
-                        <Image src={'/img/house_front_2.jpg'} alt={'House'} fill/>
+                        <Image src={'/img/casa_arrayanes_frente.jpg'} alt={'House'} fill/>
                     </div>
                 </section>
                 <section className={styles['description']}>
@@ -199,7 +192,7 @@ export default function Home() {
                             <div className={styles['description__show']}>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/kitchen.jpg'} alt={''} fill/>
+                                        <Image src={'/img/casa_arrayanes_sala.jpg'} alt={''} fill/>
                                     </div>
                                 </div>
                                 <ul className={styles['description__items']}>
@@ -259,7 +252,7 @@ export default function Home() {
                                 </ul>
                                 <div className={styles['description__image']}>
                                     <div className={styles['description__image-container']}>
-                                        <Image src={'/img/1600/exterior_3-1600.webp'} alt={''} fill/>
+                                        <Image src={'/img/casa_arrayanes_frente_2.jpg'} alt={''} fill/>
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +265,7 @@ export default function Home() {
                         {imageArray.map((image) => (
                             <div className={styles['carousel__item']} key={image}>
                                 <Image
-                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
+                                    src={`/img/${thumbSize}/${image}_${thumbSize}.jpg`}
                                     alt={image}
                                     fill
                                     priority={true}
@@ -282,7 +275,7 @@ export default function Home() {
                         {imageArray.map((image) => (
                             <div className={styles['carousel__item']} key={image}>
                                 <Image
-                                    src={`/img/${thumbSize}/${image}-${thumbSize}.webp`}
+                                    src={`/img/${thumbSize}/${image}_${thumbSize}.jpg`}
                                     alt={image}
                                     fill
                                     priority={true}
@@ -294,7 +287,7 @@ export default function Home() {
                 <h1>Ubicación</h1>
                 <div className={styles['map']}>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.447288101044!2d-74.05531129789163!3d4.812927960158368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f86471aa8bc13%3A0x8af900a059e009f1!2sHacienda%20San%20Sebasti%C3%A1n!5e0!3m2!1ses!2sco!4v1674183171752!5m2!1ses!2sco"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3343.26532618027!2d-74.06845289483118!3d4.798378412363245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1710907398993!5m2!1ses!2sco"
                         width="100%" height="100%" allowFullScreen="" loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -335,14 +328,14 @@ export default function Home() {
                                 >
                                     Estudio y Terraza
                                 </li>
-                                <li
-                                    onClick={() => {
-                                        setGalleryArray(tvRoom)
-                                        setListArray(tvRoom_list)
-                                    }}
-                                >
-                                    Sala TV
-                                </li>
+                                {/*<li*/}
+                                {/*    onClick={() => {*/}
+                                {/*        setGalleryArray(tvRoom)*/}
+                                {/*        setListArray(tvRoom_list)*/}
+                                {/*    }}*/}
+                                {/*>*/}
+                                {/*    Sala TV*/}
+                                {/*</li>*/}
                                 <li
                                     onClick={() => {
                                         setGalleryArray(rooms)
@@ -386,7 +379,7 @@ export default function Home() {
                                         setIsOpen(true)
                                     }}
                                 >
-                                    <Image src={`/img/${thumbSize}/${image}-${thumbSize}.webp`} alt={image} fill/>
+                                    <Image src={`/img/${thumbSize}/${image}_${thumbSize}.jpg`} alt={image} fill/>
                                 </div>
                             ))}
                         </div>
