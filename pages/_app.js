@@ -55,7 +55,7 @@ function MyApp({Component, pageProps}) {
             }}
         />
         <Head>
-            <title>Casa Campestre Guaymaral</title>
+            <title>Casa Campestre Arrayanes</title>
             <meta name="facebook-domain-verification" content="rmob2k0z5aobo45dat0cydf12zxfnj" />
         </Head>
         <Component {...pageProps} />
