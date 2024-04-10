@@ -6,7 +6,7 @@ import ImageViewer from '../components/imageViewer/imageViewer'
 import * as fbq from '../lib/fbpixel'
 
 export default function Home() {
-    const whatsAppLink = 'https://wa.me/573005568874?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Guaymaral'
+    const whatsAppLink = 'https://wa.me/573152333321?text=Hola!%20Quisiera%20información%20de%20la%20casa%20de%20Arrayanes'
     const handleContact = () => {
         fbq.event('Contact')
     }
@@ -22,19 +22,18 @@ export default function Home() {
     const exterior = [
         'casa_arrayanes_frente_2',
         'casa_arrayanes_frente',
+        'casa_arrayanes_jardin',
     ]
     const exterior_list = [
         {text: 'Jardín Zen', icon: 'self_improvement'},
         {text: 'Zona BBQ', icon: 'outdoor_grill'},
-        {text: '4 accesos al interior de la casa', icon: 'door_sliding'},
         {text: 'Valla de arboles alrededor', icon: 'forest'}
     ]
     const kitchen = ['casa_arrayanes_cocina', 'casa_arrayanes_cocina_2', 'casa_arrayanes_lavanderia']
     const kitchen_list = [
         {text: 'Horno', icon: 'cake'},
-        {text: 'Lavaplatos automatico', icon: 'shower'},
-        {text: 'Estufa 5 puestos', icon: 'multicooker'},
-        {text: 'Mesón de granito integrado', icon: 'flatware'},
+        {text: 'Estufa 4 puestos', icon: 'multicooker'},
+        {text: 'Mesón integrado', icon: 'flatware'},
         {text: 'Muebles en madera', icon: 'event_seat'},
         {text: 'Acceso al patio', icon: 'door_sliding'}
     ]
@@ -50,19 +49,18 @@ export default function Home() {
     ]
     const livingRoom_list = [
         {text: 'Sala de doble altura', icon: 'grid_view'},
-        {text: 'Cortinas automaticas', icon: 'build'},
         {text: 'Chimenea', icon: 'fireplace'},
-        {text: 'Acceso a jardines por puerta corrediza', icon: 'door_sliding'}
     ]
     const rooms = [
         'casa_arrayanes_habitacion_3',
+        'casa_arrayanes_baño_principal',
         'casa_arrayanes_habitacion_1',
         'casa_arrayanes_habitcion_2',
+        'casa_arrayanes_baño_hab',
     ]
     const rooms_list = [
-        {text: 'Walking closet en madera', icon: 'door_sliding'},
+        {text: 'Walking closet habitación principal', icon: 'door_sliding'},
         {text: 'Baño privado', icon: 'bathroom'},
-        {text: 'Doble lavamanos', icon: 'wash'},
         {text: 'Tina', icon: 'bathtub'}
     ]
     const tvRoom = ['tv_room_1', 'tv_room_2']
@@ -73,7 +71,7 @@ export default function Home() {
     const study = ['casa_arrayanes_piso_3', 'casa_arrayanes_estudio', 'casa_arrayanes_terraza']
     const study_list = [
         {text: 'Muebles en madera', icon: 'event_seat'},
-        {text: 'Techo taslucido en terraza', icon: 'brightness_7'}
+        {text: 'Maravillosa vista a la sabana', icon: 'brightness_7'}
     ]
     const thumbSize = 640
 
@@ -119,7 +117,7 @@ export default function Home() {
                                 </i>
                                 <div className={styles['main__content-description']}>
                                     <h4>Área construida</h4>
-                                    <p>320mts</p>
+                                    <p>165mts</p>
                                 </div>
                             </div>
                             <div className={styles['main__content-item']}>
@@ -129,8 +127,8 @@ export default function Home() {
                                     dashboard
                                 </i>
                                 <div className={styles['main__content-description']}>
-                                    <h4>Área Total</h4>
-                                    <p>1420mts</p>
+                                    <h4>Área Lote</h4>
+                                    <p>180mts</p>
                                 </div>
                             </div>
                             <div className={styles['main__content-item']}>
@@ -141,7 +139,7 @@ export default function Home() {
                                 </i>
                                 <div className={styles['main__content-description']}>
                                     <h4>Habitaciones</h4>
-                                    <p>4</p>
+                                    <p>3</p>
                                 </div>
                             </div>
 
@@ -153,7 +151,7 @@ export default function Home() {
                                 </i>
                                 <div className={styles['main__content-description']}>
                                     <h4>Parqueaderos</h4>
-                                    <p>4</p>
+                                    <p>2</p>
                                 </div>
                             </div>
 
@@ -181,11 +179,10 @@ export default function Home() {
                     <div className={styles['description__container']}>
                         <div className={styles['description__content']}>
                             <p>
-                                Hermosa casa campestre en hacienda{' '}
-                                <strong>San Sebastián</strong> a minutos del centro comercial
-                                Bima en Bogotá, Colombia. <br/>
-                                Casa de diseño moderno con <strong>320mts</strong> construidos
-                                en un lote de <strong>1420mts </strong>
+                                Hermosa casa campestre en {' '}
+                                <strong>Camino de Arrayanes</strong> a minutos de la autopista norte Bogotá, Colombia. <br/>
+                                Casa de diseño moderno con <strong>165mts</strong> construidos
+                                en un lote de <strong>14m x 16m </strong>
                                 que proporciona privacidad y majestuosas vistas de la vegetación
                                 de la sabana.
                             </p>
@@ -197,8 +194,8 @@ export default function Home() {
                                 </div>
                                 <ul className={styles['description__items']}>
                                     <li>
-                                        <i className={'material-symbols-outlined'}>bed</i>4
-                                        Habitaciones, con baño privado
+                                        <i className={'material-symbols-outlined'}>bed</i>3
+                                        Habitaciones
                                     </li>
                                     <li>
                                         <i className={'material-symbols-outlined'}>shower</i>Baño
@@ -227,18 +224,18 @@ export default function Home() {
                                 <ul className={styles['description__items']}>
                                     <li>
                                         <i className={'material-symbols-outlined'}>menu_book</i>
-                                        Estudio y terraza en segunda planta
+                                        Estudio y terraza en tercera planta
                                     </li>
                                     <li>
                                         <i className={'material-symbols-outlined'}>outdoor_grill</i>
                                         Zona de asados
                                     </li>
                                     <li>
-                                        <i className={'material-symbols-outlined'}>garage</i>4
+                                        <i className={'material-symbols-outlined'}>garage</i>2
                                         garajes
                                     </li>
                                     <li>
-                                        <i className={'material-symbols-outlined'}>forest</i>Rodeado
+                                        <i className={'material-symbols-outlined'}>forest</i>Patio rodeado
                                         de bellos jardines privados
                                     </li>
                                     <li>
